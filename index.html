@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Naval Aviation Museum – Sikorsky UH-3H</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background-color:#0b1c2d;
+color:#ffffff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.container{
+width:90%;
+max-width:900px;
+background-color:#102a43;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 12px 30px rgba(0,0,0,0.4);
+text-align:center;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#0f4c75,#3282b8);
+padding:20px;
+position:relative;
+}
+
+header h1{
+margin:0;
+font-size:28px;
+letter-spacing:2px;
+}
+
+/* LOGOS */
+
+.logo-left{
+position:absolute;
+left:10px;
+top:10px;
+height:70px;
+}
+
+.logo-right{
+position:absolute;
+right:10px;
+top:10px;
+height:70px;
+}
+
+.image-section img{
+width:100%;
+height:auto;
+display:block;
+}
+
+.content{
+padding:24px;
+}
+
+.content h2{
+margin-top:0;
+font-size:24px;
+}
+
+.buttons{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
+}
+
+button{
+background-color:#3282b8;
+color:#ffffff;
+border:none;
+padding:14px 22px;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+transition:background 0.2s, transform 0.2s;
+}
+
+button:hover{
+background-color:#1b6ca8;
+transform:translateY(-2px);
+}
+
+footer{
+background-color:#081827;
+padding:10px;
+font-size:14px;
+opacity:0.85;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<img src="NAM.jpg" class="logo-left">
+<img src="IN.jpeg" class="logo-right">
+
+<h1>NAVAL AVIATION MUSEUM</h1>
+
+</header>
+
+<div class="image-section">
+<img src="sikorsky-uh3h.jpg" alt="Sikorsky UH-3H Helicopter">
+</div>
+
+<div class="content">
+
+<h2>Sikorsky UH-3H</h2>
+<p>Select a language to hear the aircraft narration:</p>
+
+<div class="buttons">
+<button onclick="playEnglish()">🔊 English</button>
+<button onclick="playHindi()">🔊 हिंदी</button>
+<button onclick="stopAudio()">⏹ Stop</button>
+</div>
+
+</div>
+
+<footer>
+© Naval Aviation Museum | Educational Display
+</footer>
+
+<audio id="englishAudio" src="sikorsky english.mp3"></audio>
+<audio id="hindiAudio" src="sikorsky hindi.mp3"></audio>
+
+</div>
+
+<script>
+
+const englishAudio=document.getElementById("englishAudio");
+const hindiAudio=document.getElementById("hindiAudio");
+
+function playEnglish(){
+hindiAudio.pause();
+hindiAudio.currentTime=0;
+englishAudio.play();
+}
+
+function playHindi(){
+englishAudio.pause();
+englishAudio.currentTime=0;
+hindiAudio.play();
+}
+
+function stopAudio(){
+englishAudio.pause();
+hindiAudio.pause();
+englishAudio.currentTime=0;
+hindiAudio.currentTime=0;
+}
+
+</script>
+
+</body>
+</html>
