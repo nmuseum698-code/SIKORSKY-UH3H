@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Naval Aviation Museum – Sikorsky UH-3H</title>
 
 <style>
@@ -11,7 +12,7 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background-color:#0b1c2d;
-color:#ffffff;
+color:white;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -21,11 +22,30 @@ min-height:100vh;
 .container{
 width:90%;
 max-width:900px;
-background-color:#102a43;
-border-radius:16px;
-overflow:hidden;
-box-shadow:0 12px 30px rgba(0,0,0,0.4);
+background:#102a43;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 text-align:center;
+position:relative;
+padding-top:90px;
+}
+
+/* LOGOS */
+
+.logo{
+position:absolute;
+top:10px;
+width:120px;   /* SAME SIZE FOR BOTH */
+height:120px;
+object-fit:contain;
+}
+
+.logo-left{
+left:20px;
+}
+
+.logo-right{
+right:20px;
 }
 
 /* HEADER */
@@ -33,75 +53,60 @@ text-align:center;
 header{
 background:linear-gradient(135deg,#0f4c75,#3282b8);
 padding:20px;
-position:relative;
 }
 
 header h1{
 margin:0;
-font-size:28px;
 letter-spacing:2px;
 }
 
-/* LOGOS */
-
-.logo-left{
-position:absolute;
-left:10px;
-top:10px;
-height:70px;
-}
-
-.logo-right{
-position:absolute;
-right:10px;
-top:10px;
-height:70px;
-}
+/* IMAGE */
 
 .image-section img{
 width:100%;
 height:auto;
-display:block;
 }
 
+/* CONTENT */
+
 .content{
-padding:24px;
+padding:25px;
 }
 
 .content h2{
 margin-top:0;
-font-size:24px;
 }
+
+/* BUTTONS */
 
 .buttons{
 margin-top:20px;
 display:flex;
 justify-content:center;
-gap:16px;
+gap:15px;
 flex-wrap:wrap;
 }
 
 button{
-background-color:#3282b8;
-color:#ffffff;
+background:#3282b8;
 border:none;
-padding:14px 22px;
+color:white;
+padding:12px 20px;
 font-size:16px;
-border-radius:10px;
+border-radius:8px;
 cursor:pointer;
-transition:background 0.2s, transform 0.2s;
 }
 
 button:hover{
-background-color:#1b6ca8;
-transform:translateY(-2px);
+background:#1b6ca8;
 }
 
+/* FOOTER */
+
 footer{
-background-color:#081827;
+background:#081827;
 padding:10px;
 font-size:14px;
-opacity:0.85;
 }
 
 </style>
@@ -111,13 +116,13 @@ opacity:0.85;
 
 <div class="container">
 
+<!-- LOGOS -->
+
+<img src="NAM.png" class="logo logo-left" alt="Naval Aviation Museum Logo">
+<img src="IN.png" class="logo logo-right" alt="Indian Navy Logo">
+
 <header>
-
-<img src="NAM.jpg" class="logo-left">
-<img src="IN.jpeg" class="logo-right">
-
 <h1>NAVAL AVIATION MUSEUM</h1>
-
 </header>
 
 <div class="image-section">
@@ -127,18 +132,20 @@ opacity:0.85;
 <div class="content">
 
 <h2>Sikorsky UH-3H</h2>
-<p>Select a language to hear the aircraft narration:</p>
+<p>Select a language to hear the aircraft narration</p>
 
 <div class="buttons">
+
 <button onclick="playEnglish()">🔊 English</button>
 <button onclick="playHindi()">🔊 हिंदी</button>
 <button onclick="stopAudio()">⏹ Stop</button>
+
 </div>
 
 </div>
 
 <footer>
-© Naval Aviation Museum | Educational Display
+Naval Aviation Museum Goa | Exhibit Audio Guide
 </footer>
 
 <audio id="englishAudio" src="sikorsky english.mp3"></audio>
